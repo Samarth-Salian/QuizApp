@@ -6,13 +6,23 @@ import { AppComponent } from './app.component';
 import { QuizLoginComponent } from './quiz-login/quiz-login.component';
 import { QuizStartComponent } from './quiz-start/quiz-start.component';
 import { QuizDisplayComponent } from './quiz-display/quiz-display.component';
+import { QuizScoreComponent } from './quiz-score/quiz-score.component';
+import { QuizResultComponent } from './quiz-result/quiz-result.component';
+import { QuizHeaderComponent } from './quiz-header/quiz-header.component';
+import { QuizContainerComponent } from './quiz-container/quiz-container.component';
+import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizLoginComponent,
     QuizStartComponent,
-    QuizDisplayComponent
+    QuizDisplayComponent,
+    QuizScoreComponent,
+    QuizResultComponent,
+    QuizHeaderComponent,
+    QuizContainerComponent,
+    QuizQuestionComponent
   ],
   imports: [
     BrowserModule,
