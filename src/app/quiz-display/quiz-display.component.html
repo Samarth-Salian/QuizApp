@@ -1,10 +1,8 @@
-<p>quiz-display works!</p>
-<div>
+<div *ngIf="question">
     <p>
-    Who is President of India?
-</p><br>
-    <button class="button button1">Option 1</button>
-    <button class="button button1">Option 2</button>
-    <button class="button button1">Option 3</button>
-    <button class="button button1">Option 4</button>
+        {{question.questionDesc}}
+    </p><br>
+    <p *ngFor="let op  of question.options">
+        <button>{{op.optionDesc}}</button>
+    </p>
 </div>
