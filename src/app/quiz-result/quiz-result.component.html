@@ -1,1 +1,11 @@
-<p>quiz-result works!</p>
+<app-quiz-header></app-quiz-header>
+<div *ngFor="let article of questionNAnswer.questions; let i = index">
+    <p>{{i+1}}) {{article.questionDesc}}</p>
+    <div class="container" *ngFor="let option of article.options">
+        <button class="btn btn-success"
+            *ngIf="article.answer===option.optionId else elseBlk">{{option.optionId}}: {{option.optionDesc}}</button>
+        <ng-template #elseBlk>
+            <button>{{option.optionId}}: {{option.optionDesc}}</button>
+        </ng-template>
+    </div>
+</div>
