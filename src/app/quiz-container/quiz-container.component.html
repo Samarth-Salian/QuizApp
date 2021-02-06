@@ -1,1 +1,21 @@
-<p>quiz-container works!</p>
+<form><br>
+<div>
+<button mat-raised-button color="warn" style="float:right">Quit</button>
+</div><br>
+
+
+<div [ngClass]="'row'">
+  <div [ngClass]="'column'">
+	<p>Time Left</p>
+	<p>{{timeLeft | number: '2.0'}} Seconds Left</p>
+</div>
+  <div [ngClass]="'column'">
+  <p>Questions {{questionNumber}} of {{questionLength}}</p>
+  <mat-progress-bar mode="determinate" [value]="progressbarValue"></mat-progress-bar>
+</div>
+</div>
+
+<div>
+<button mat-raised-button color="primary" (click)='nextQuestion()' style ="float:right">Next</button>
+</div>
+</form>
