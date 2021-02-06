@@ -18,3 +18,9 @@ git clone https://github.com/Samarth-Salian/QuizApp.git
 cd QuizApp
 npm install
 ng serve
+
+How to create GitHub repository and cloning in local from VSCode
+https://zeroesandones.medium.com/how-to-create-a-repository-on-github-and-clone-it-locally-using-vscode-91543517a455
+
+How to commit and push changes to Github repository from VSCode
+https://zeroesandones.medium.com/how-to-commit-and-push-your-changes-to-your-github-repository-in-vscode-77a7a3d7dd02
