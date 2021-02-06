@@ -8,13 +8,13 @@ import { Quiz, Question } from  './../quiz-model/quiz-model';
   styleUrls: ['./quiz-result.component.css']
 })
 export class QuizResultComponent implements OnInit {
-  questionNAnswer:Object;
+  questionNAnswer: Question[] = [];
 
   constructor(private appService:AppService) {
-    this.questionNAnswer = {};
+    
     this.appService.getQuestionAndAnswer().subscribe((data)=>{
       console.log(data);
-      this.questionNAnswer = data;
+      this.questionNAnswer = data.questions;
     });
    }
   

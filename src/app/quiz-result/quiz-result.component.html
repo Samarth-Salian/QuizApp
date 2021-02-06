@@ -1,5 +1,5 @@
 <app-quiz-header></app-quiz-header>
-<div *ngFor="let article of questionNAnswer.questions; let i = index">
+<div *ngFor="let article of questionNAnswer; let i = index">
     <p>{{i+1}}) {{article.questionDesc}}</p>
     <div class="container" *ngFor="let option of article.options">
         <button class="btn btn-success"
