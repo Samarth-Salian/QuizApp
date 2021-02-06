@@ -5,3 +5,6 @@
 .navbar-header{
     display: inline-block;
 }
+.signOutBtn{
+    border-radius: 20px;
+}
