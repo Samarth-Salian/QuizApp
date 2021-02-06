@@ -20,10 +20,6 @@ const routes: Routes = [
     component: QuizScoreComponent
   },
   {
-    path:"question",
-    component: QuizQuestionComponent
-  },
-  {
     path:"container",
     component: QuizContainerComponent
   }
