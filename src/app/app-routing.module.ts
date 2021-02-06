@@ -8,12 +8,13 @@ const routes: Routes = [
   {
     path:"",
     component: QuizLoginComponent
-  },{
+  },
+  {
     path:"start",
     component: QuizStartComponent
   },
   {
-    path:"quiz-score",
+    path:"score",
     component: QuizScoreComponent
   }
 ];
