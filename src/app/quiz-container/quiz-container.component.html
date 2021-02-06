@@ -1,3 +1,15 @@
 <app-quiz-header></app-quiz-header>
+<div>
+    <div>
+      <p>Time Left</p>
+      <p>{{timeLeft | number: '2.0'}} Seconds Left</p>
+    </div>
+    <div>
+        <p>Questions {{questionNumber}} of {{questionLength}}</p>
+    </div>
+</div>
 <app-quiz-display [quizData]="currentQuestion"></app-quiz-display>
-<button (click)="nextQuestion()">Next Question</button>
+<!--<button (click)="nextQuestion()">Next Question</button>-->
+<div >
+    <button mat-raised-button color="primary" (click)='nextQuestion($event)' style ="float:right">Next</button>
+</div>
