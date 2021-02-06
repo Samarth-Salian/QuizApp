@@ -6,6 +6,8 @@ import { QuizStartComponent } from './quiz-start/quiz-start.component';
 import { QuizScoreComponent } from './quiz-score/quiz-score.component';
 import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
 import { QuizContainerComponent } from './quiz-container/quiz-container.component';
+import { QuizResultComponent } from './quiz-result/quiz-result.component';
+  import { from } from 'rxjs';
 const routes: Routes = [  
   {
     path:"",
@@ -26,6 +28,10 @@ const routes: Routes = [
   {
     path:"container",
     component: QuizContainerComponent
+  },
+  {
+    path:"result",
+    component:QuizResultComponent
   }
 ];
 
