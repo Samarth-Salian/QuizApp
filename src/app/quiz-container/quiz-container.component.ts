@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Question, Quiz } from '../quiz-model/quiz.model';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-quiz-container',
   templateUrl: './quiz-container.component.html',
@@ -15,20 +17,31 @@ export class QuizContainerComponent implements OnInit {
   interval: any;
   questionLength :number;
   questionNumber: number;
-  constructor(private http: HttpClient) {
-    this.questionNumber = 1;
-    this.questionLength = 10;
+  constructor(private http: HttpClient,private router: Router) {
+    this.questionNumber = 0;
     this.progressbarValue = 10;
+    this.questionLength = 0;
    }
+
   ngOnInit(): void {
     this.http.get<Quiz>('assets/mock/questionsNOptions.json').subscribe((data) => {
       this.quizQuestions = data.questions
-      this.nextQuestion();
+      this.questionLength = this.quizQuestions.length;
+      this.nextQuestion(event);
     });
   }
-  nextQuestion() {
+
+  nextQuestion(event:any) {
+    this.questionNumber++;
+    if(this.questionNumber > this.quizQuestions.length){
+      this.router.navigateByUrl('/score');
+    }
     this.currentQuestion = this.quizQuestions[this.currentQuestionIndex];
     this.currentQuestionIndex++;
+    this.timeLeft = 10;
+    if(this.questionNumber === 10){
+      event.target.innerText = "Save";
+    }
   }
   startTimer() {
   this.interval = setInterval(() => {
@@ -39,10 +52,5 @@ export class QuizContainerComponent implements OnInit {
   }
   ngAfterViewInit(){
     this.startTimer();
-  }
-  nextQuestion1 () {
-    this.timeLeft = 10;
-    this.questionNumber++;
-    this.progressbarValue = this.progressbarValue + 10;
   }
 }
