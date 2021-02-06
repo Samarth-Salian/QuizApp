@@ -7,9 +7,10 @@ import { AppService } from '../app.service';
   styleUrls: ['./quiz-login.component.css']
 })
 export class QuizLoginComponent implements OnInit {
-
-  constructor(public appService: AppService) { }
-
+  appName;
+  constructor(private appService: AppService) { 
+    this.appName = this.appService.getAppName();
+  }  
   ngOnInit(): void {
   }
 
