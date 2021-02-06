@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Quiz, Question } from './../quiz-model/Quiz-Model';
+import { Question, Quiz } from '../quiz-model/quiz.model';
+
 
 @Component({
   selector: 'app-quiz-container',
@@ -9,7 +10,7 @@ import { Quiz, Question } from './../quiz-model/Quiz-Model';
 })
 export class QuizContainerComponent implements OnInit {
 
-  quizQuestions: Question[] = [];
+  quizQuestions: Question[]=[]
 
   currentQuestionIndex = 0;
 
