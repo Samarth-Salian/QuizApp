@@ -1,3 +1,26 @@
 <app-quiz-header></app-quiz-header>
+<form><br>
+<div>
+<button mat-raised-button color="warn" style="float:right">Quit</button>
+</div><br>
+
+<div [ngClass]="'row'">
+  <div [ngClass]="'column'">
+	<p>Time Left</p>
+	<p>{{timeLeft | number: '2.0'}} Seconds Left</p>
+</div>
+  <div [ngClass]="'column'">
+  <p>Questions {{questionNumber}} of {{questionLength}}</p>
+  <mat-progress-bar mode="determinate" [value]="progressbarValue"></mat-progress-bar>
+</div>
+</div>
+
+
 <app-quiz-display [quizData]="currentQuestion"></app-quiz-display>
-<button mat-raised-button color="primary"  border-radius= "12px" (click)="nextQuestion()">Next Question </button>
+<!-- <button mat-raised-button color="primary"  border-radius= "12px" (click)="nextQuestion()">Next Question </button>
+<button (click)="nextQuestion()">Next Question</button> -->
+
+<div>
+<button mat-raised-button color="primary" (click)='nextQuestion1()' style ="float:right">Next</button>
+</div>
+</form>
