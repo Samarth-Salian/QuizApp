@@ -1,7 +1,7 @@
 div {
     background-color: #FAF2F2;
-    width: 300px;
-    border: 15px solid #141414;
+    width: 700px;
+    border:  groove;
     padding: 50px;
     margin: 20px;
   }
@@ -16,5 +16,8 @@ div {
     margin: 4px 2px;
     cursor: pointer;
   }
-  
+  .startText{
+    padding-bottom: 10%;
+    font-size: 18px;
+}
   .button1 {background-color: #A1E1E6;} 
