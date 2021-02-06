@@ -11,6 +11,7 @@ import { QuizResultComponent } from './quiz-result/quiz-result.component';
 import { QuizHeaderComponent } from './quiz-header/quiz-header.component';
 import { QuizContainerComponent } from './quiz-container/quiz-container.component';
 import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
