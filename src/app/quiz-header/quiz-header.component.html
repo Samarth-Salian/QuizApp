@@ -1,10 +1,10 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Quiz App</a>
+<nav [ngClass]="'navbar navbar-default'">
+    <div [ngClass]="'container-fluid'">
+      <div [ngClass]="'navbar-header'">
+        <a [ngClass]="'navbar-brand'" href="#">{{this.appService.appName}}</a>
       </div>
-      <div class="signOutContainer">
-        <button mat-raised-button class="signOutBtn">Sign Out</button>
+      <div [ngClass]="'signOutContainer'">
+        <button mat-raised-button [ngClass]="'signOutBtn'">Sign Out</button>
       </div>
     </div>
   </nav>

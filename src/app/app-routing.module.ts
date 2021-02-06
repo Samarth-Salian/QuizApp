@@ -5,6 +5,7 @@ import { QuizLoginComponent } from './quiz-login/quiz-login.component';
 import { QuizStartComponent } from './quiz-start/quiz-start.component';
 import { QuizScoreComponent } from './quiz-score/quiz-score.component';
 import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
+import { QuizContainerComponent } from './quiz-container/quiz-container.component';
 const routes: Routes = [  
   {
     path:"",
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path:"score",
     component: QuizScoreComponent
+  },
+  {
+    path:"container",
+    component: QuizContainerComponent
   }
 ];
 

@@ -1,8 +1,9 @@
 <app-quiz-header></app-quiz-header>
-<div class="scoreContainer">
-    <div>Your Score is 3 of 10</div>
-    <div class="icon">
-        <img src="" alt="happy">
+<div [ngClass]="'scoreContainer'">
+    <h1>Your Score is {{score}} of {{TotalQuestions}}</h1>
+    <h1>{{percentage}}%</h1>
+    <div [ngClass]="'icon'">
+        <img src={{icon}} [ngClass]="'imageIcon'">
     </div>
-    <button mat-raised-button color="primary" class="startBtn">View Detailed Results</button>
+    <button mat-raised-button color="primary" [ngClass]="'startBtn'">View Detailed Results</button>
 </div>
