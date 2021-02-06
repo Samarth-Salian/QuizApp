@@ -24,3 +24,6 @@ https://zeroesandones.medium.com/how-to-create-a-repository-on-github-and-clone-
 
 How to commit and push changes to Github repository from VSCode
 https://zeroesandones.medium.com/how-to-commit-and-push-your-changes-to-your-github-repository-in-vscode-77a7a3d7dd02
+
+How to create new branch from other branch(example: master), push the changes and delete from VSCode
+https://medium.com/@brygrill/version-control-basics-with-github-and-vs-code-1c1906cadd33
