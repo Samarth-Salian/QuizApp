@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { QuizLoginComponent } from './quiz-login/quiz-login.component';
 import { QuizStartComponent } from './quiz-start/quiz-start.component';
 import { QuizScoreComponent } from './quiz-score/quiz-score.component';
+import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
 const routes: Routes = [  
   {
     path:"",
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:"score",
     component: QuizScoreComponent
+  },
+  {
+    path:"question",
+    component: QuizQuestionComponent
   }
 ];
 
