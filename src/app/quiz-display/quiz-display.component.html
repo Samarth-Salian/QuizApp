@@ -1,8 +1,8 @@
 <div  class="startText" *ngIf="question">
     <p>
-        {{question.questionDesc}}
+       {{counter}}) {{question.questionDesc}}
     </p><br>
     <p *ngFor="let op  of question.options">
-        <button mat-raised-button color="primary">{{op.optionDesc}}</button>
+        <button class="btn" (click)="getSelectedOption($event)">{{op.optionDesc}}</button>
     </p>
 </div>

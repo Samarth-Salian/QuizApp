@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
-import { Quiz, Question } from  './../quiz-model/quiz-model';
+import { Quiz, Question } from  '../quiz-model/quiz.model';
 
 @Component({
   selector: 'app-quiz-result',
@@ -9,15 +9,11 @@ import { Quiz, Question } from  './../quiz-model/quiz-model';
 })
 export class QuizResultComponent implements OnInit {
   questionNAnswer: Question[] = [];
-
-  constructor(private appService:AppService) {
-    
+  constructor(private appService:AppService) {    
     this.appService.getQuestionAndAnswer().subscribe((data)=>{
-      console.log(data);
       this.questionNAnswer = data.questions;
     });
-   }
-  
+   }  
     ngOnInit(): void {
     
   }

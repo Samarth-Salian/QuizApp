@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ComponentFactoryResolver } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Question, Quiz } from '../quiz-model/quiz.model';
 import {Router} from '@angular/router';
@@ -47,6 +47,8 @@ export class QuizContainerComponent implements OnInit {
   this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
         this.timeLeft--;
+      }else if(this.questionNumber < this.quizQuestions.length){
+        this.nextQuestion(event);
       }
     },1000)
   }
