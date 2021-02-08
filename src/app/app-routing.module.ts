@@ -5,9 +5,8 @@ import { QuizLoginComponent } from './quiz-login/quiz-login.component';
 import { QuizStartComponent } from './quiz-start/quiz-start.component';
 import { QuizScoreComponent } from './quiz-score/quiz-score.component';
 import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
-import { QuizContainerComponent } from './quiz-container/quiz-container.component';
 import { QuizResultComponent } from './quiz-result/quiz-result.component';
-  import { from } from 'rxjs';
+import { QuizDisplayComponent } from './quiz-display/quiz-display.component';
 const routes: Routes = [  
   {
     path:"",
@@ -26,8 +25,8 @@ const routes: Routes = [
     component: QuizQuestionComponent
   },
   {
-    path:"container",
-    component: QuizContainerComponent
+    path:"display",
+    component: QuizDisplayComponent
   },
   {
     path:"result",

@@ -1,6 +1,4 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { Question } from '../quiz-model/quiz.model';
-
 
 @Component({
   selector: 'app-quiz-display',
@@ -9,13 +7,7 @@ import { Question } from '../quiz-model/quiz.model';
 })
 export class QuizDisplayComponent implements OnInit {
 
-
-  @Input('quizData')
-  question: Question;
-
-  constructor() { 
-    this.question = {};
-  }
+ constructor(){}
 
   ngOnInit(): void {
     

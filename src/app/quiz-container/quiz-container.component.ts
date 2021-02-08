@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Question, Quiz } from '../quiz-model/quiz.model';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-quiz-container',
@@ -17,14 +17,15 @@ export class QuizContainerComponent implements OnInit {
   interval: any;
   questionLength :number;
   questionNumber: number;
-  constructor(private http: HttpClient,private router: Router) {
+
+  constructor(private appService:AppService, private router: Router) {
     this.questionNumber = 0;
     this.progressbarValue = 10;
     this.questionLength = 0;
    }
 
   ngOnInit(): void {
-    this.http.get<Quiz>('assets/mock/questionsNOptions.json').subscribe((data) => {
+    this.appService.questionsNOptions().subscribe((data) => {
       this.quizQuestions = data.questions
       this.questionLength = this.quizQuestions.length;
       this.nextQuestion(event);

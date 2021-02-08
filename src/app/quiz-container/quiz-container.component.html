@@ -1,18 +1,17 @@
-<app-quiz-header></app-quiz-header>
 <div>
-<button mat-raised-button color="warn" style="float:right">Quit</button>
+    <button mat-raised-button color="warn" style="float:right">Quit</button>
 </div>
 <div>
     <div>
-      <p>Time Left</p>
-      <p>{{timeLeft | number: '2.0'}} Seconds Left</p>
+        <p>Time Left</p>
+        <p>{{timeLeft | number: '2.0'}} Seconds Left</p>
     </div>
     <div>
         <p>Questions {{questionNumber}} of {{questionLength}}</p>
     </div>
 </div>
-<app-quiz-display [quizData]="currentQuestion"></app-quiz-display>
+<app-quiz-question [quizData]="currentQuestion"></app-quiz-question>
 
-<div >
-    <button mat-raised-button color="primary" (click)='nextQuestion($event)' style ="float:right">Next</button>
+<div>
+    <button mat-raised-button color="primary" (click)='nextQuestion($event)' style="float:right">Next</button>
 </div>

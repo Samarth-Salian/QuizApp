@@ -1,1 +1,8 @@
-<p>quiz-question works!</p>
+<div  class="startText" *ngIf="question">
+    <p>
+        {{question.questionDesc}}
+    </p><br>
+    <p *ngFor="let option  of question.options">
+        <button mat-raised-button color="primary">{{option.optionDesc}}</button>
+    </p>
+</div>

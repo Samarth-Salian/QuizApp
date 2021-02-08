@@ -1,8 +1,2 @@
-<div  class="startText" *ngIf="question">
-    <p>
-        {{question.questionDesc}}
-    </p><br>
-    <p *ngFor="let op  of question.options">
-        <button mat-raised-button color="primary">{{op.optionDesc}}</button>
-    </p>
-</div>
+<app-quiz-header></app-quiz-header>
+<app-quiz-container></app-quiz-container>
