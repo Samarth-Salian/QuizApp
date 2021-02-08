@@ -59,6 +59,8 @@ THE SOFTWARE.
 
 @angular/material/button
 
+@angular/material/card
+
 @angular/platform-browser
 MIT
 
