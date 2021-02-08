@@ -1,8 +1,16 @@
-<div  class="startText" *ngIf="question">
-    <p>
-        {{question.questionDesc}}
-    </p><br>
-    <p *ngFor="let option  of question.options">
-        <button mat-raised-button color="primary">{{option.optionDesc}}</button>
-    </p>
+<div class="container">
+    <mat-card *ngIf="question">
+        <mat-card-header>
+            <mat-card-title>{{question.questionDesc}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="options">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-6" *ngFor="let option  of question.options">
+                        <div class="p-3 border bg-light">{{option.optionDesc}}</div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

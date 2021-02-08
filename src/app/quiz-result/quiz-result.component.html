@@ -1,11 +1,22 @@
 <app-quiz-header></app-quiz-header>
-<div *ngFor="let article of questionNAnswer; let i = index">
-    <p>{{i+1}}) {{article.questionDesc}}</p>
-    <div class="container" *ngFor="let option of article.options">
-        <button class="btn btn-success"
-            *ngIf="article.answer===option.optionId else elseBlk">{{option.optionId}}: {{option.optionDesc}}</button>
-        <ng-template #elseBlk>
-            <button>{{option.optionId}}: {{option.optionDesc}}</button>
-        </ng-template>
-    </div>
+<div class="container">
+    <mat-card *ngFor="let article of questionNAnswer; let i = index" class="card">
+        <mat-card-header>
+            <mat-card-title>{{i+1}}) {{article.questionDesc}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="options">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-6" *ngFor="let option of article.options">
+                        <div class="p-3 border correct" *ngIf="article.answer===option.optionId else elseBlk">
+                            {{option.optionId}}:
+                            {{option.optionDesc}}</div>
+                        <ng-template #elseBlk>
+                            <div class="p-3 border bg-light">{{option.optionId}}: {{option.optionDesc}}</div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

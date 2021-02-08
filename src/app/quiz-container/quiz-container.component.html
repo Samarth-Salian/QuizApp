@@ -12,6 +12,7 @@
 </div>
 <app-quiz-question [quizData]="currentQuestion"></app-quiz-question>
 
-<div>
-    <button mat-raised-button color="primary" (click)='nextQuestion($event)' style="float:right">Next</button>
+<div class="container">
+    <div class="d-grid gap-2 col-3 mx-auto nextQuestion">
+        <button class="btn btn-primary" (click)='nextQuestion($event)'>Next Question</button>
 </div>
