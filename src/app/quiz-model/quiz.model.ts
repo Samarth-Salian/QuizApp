@@ -8,6 +8,7 @@ export interface Question {
     questionId?: number;
     questionDesc?: string;
     options?: Option[];
+    answer?: string;
 }
 
 export interface Quiz {
