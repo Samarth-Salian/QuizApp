@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-import { Component, OnInit, ViewChild, ElementRef, ComponentFactoryResolver } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-=======
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
->>>>>>> 76dcdd5dbb7674e7dba35771219f4db01681e656
 import { Question, Quiz } from '../quiz-model/quiz.model';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
