@@ -19,6 +19,10 @@ cd QuizApp
 npm install
 ng serve
 
+Command to publish to Github Pages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ng deploy --base-href=/QuizApp/
+
 How to create GitHub repository and cloning in local from VSCode
 https://zeroesandones.medium.com/how-to-create-a-repository-on-github-and-clone-it-locally-using-vscode-91543517a455
 
@@ -27,3 +31,13 @@ https://zeroesandones.medium.com/how-to-commit-and-push-your-changes-to-your-git
 
 How to create new branch from other branch(example: master), push the changes and delete from VSCode
 https://medium.com/@brygrill/version-control-basics-with-github-and-vs-code-1c1906cadd33
+
+Settings to be done in terminal before commiting to Github 
+git config --global user.email "John.Doe@i-exceed.com"
+git config --global user.name "John-Doe"
+
+Important points
+~~~~~~~~~~~~~~~~
+Shift Alt F for visual studio code to indent code
+
+400 Lines per file, 75 lines per function max
