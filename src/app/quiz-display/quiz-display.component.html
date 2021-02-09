@@ -1,8 +1,5 @@
-<div  class="startText" *ngIf="question">
-    <p>
-       {{counter}}) {{question.questionDesc}}
-    </p><br>
-    <p *ngFor="let op  of question.options">
-        <button class="btn" (click)="getSelectedOption($event)">{{op.optionDesc}}</button>
-    </p>
+<app-quiz-header></app-quiz-header>
+<div class="container">
+    <app-quiz-container></app-quiz-container>
 </div>
+
