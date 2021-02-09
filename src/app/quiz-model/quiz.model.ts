@@ -1,6 +1,7 @@
 export interface Option {
     optionId: string;
     optionDesc: string;
+    selectData:string
 }
 
 export interface Question {

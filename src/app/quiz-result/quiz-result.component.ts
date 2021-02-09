@@ -9,15 +9,11 @@ import { Question } from  '../quiz-model/quiz.model';
 })
 export class QuizResultComponent implements OnInit {
   questionNAnswer: Question[] = [];
-
-  constructor(private appService:AppService) {
-    
+  constructor(private appService:AppService) {    
     this.appService.getQuestionAndAnswer().subscribe((data)=>{
-      console.log(data);
       this.questionNAnswer = data.questions;
     });
-   }
-  
+   }  
     ngOnInit(): void {
     
   }
