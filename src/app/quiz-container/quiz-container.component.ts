@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Question, Quiz } from '../quiz-model/quiz.model';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
+import { QuizQuestionComponent } from "../quiz-question/quiz-question.component";
 
 @Component({
   selector: 'app-quiz-container',
@@ -9,6 +10,7 @@ import { AppService } from '../app.service';
   styleUrls: ['./quiz-container.component.css']
 })
 export class QuizContainerComponent implements OnInit {
+  @ViewChild(QuizQuestionComponent) dataWithSelectedAnswer;
   quizQuestions: Question[] = [];
   currentQuestionIndex = 0;
   currentQuestion: Question = {};
@@ -31,16 +33,16 @@ export class QuizContainerComponent implements OnInit {
       this.nextQuestion(event);
     });
   }
-
   nextQuestion(event:any) {
     this.questionNumber++;
+    let data = this.dataWithSelectedAnswer.getQuestionWithUserAnswer();
     if(this.questionNumber > this.quizQuestions.length){
-      this.router.navigateByUrl('/score');
+      this.router.navigateByUrl('/score',{state: {data:data}});
     }
     this.currentQuestion = this.quizQuestions[this.currentQuestionIndex];
     this.currentQuestionIndex++;
     this.timeLeft = 10;
-    if(this.questionNumber === 10){
+    if(this.questionNumber === this.quizQuestions.length){
       event.target.innerText = "Save";
     }
   }
@@ -48,6 +50,8 @@ export class QuizContainerComponent implements OnInit {
   this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
         this.timeLeft--;
+      }else if(this.questionNumber <= this.quizQuestions.length){
+        this.nextQuestion(event);
       }
     },1000)
   }

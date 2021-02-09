@@ -33,5 +33,9 @@ export class QuizQuestionComponent implements OnInit {
       value.classList.remove('btn-success');
     });
     event.target.setAttribute("class", "p-3 border btn-success");
+    this.getQuestionWithUserAnswer();
+  }
+  getQuestionWithUserAnswer(){
+    return this.dataWithAnswer;
   }
 }

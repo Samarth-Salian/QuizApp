@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizQuestionComponent } from "../quiz-question/quiz-question.component";
+import { AppService } from '../app.service';
+import { Question } from  '../quiz-model/quiz.model';
 
 @Component({
   selector: 'app-quiz-score',
@@ -7,22 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizScoreComponent implements OnInit {
   percentage: number;
-  score:number;
+  score=0;
   TotalQuestions:number;
   icon:any;
-  constructor() { 
-    this.score = 8;
-    this.TotalQuestions = 10;
-    this.percentage = this.score/this.TotalQuestions * 100;
+  questionNAnswer: Question[] = [];
+  dataInScore = history.state.data;
+  constructor(private appService:AppService) {
+    this.score = 0;    
    }
-
   ngOnInit(): void {
-    if(this.percentage >= 0 && this.percentage <= 33){
-      this.icon = "disappointed";
-    } else if(this.percentage >= 34 && this.percentage <= 66){
-      this.icon = "Good";
-    } else {
-      this.icon = "../../assets/images/trophy.png";
-    }
+    let count =0;
+    this.appService.getQuestionAndAnswer().subscribe((data)=>{
+      this.questionNAnswer = data.questions;
+      this.questionNAnswer.forEach(function (item) {
+        let answerId = item.answer;
+        if(history.state.data.has(item.questionId)){
+          let a = history.state.data.get(item.questionId);
+          let obj = a.options.find(item => item.optionDesc === a.selectOption);
+            if(item.answer === obj.optionId){
+              count++;
+            }
+          }
+      });
+      this.score = count;
+      this.TotalQuestions = this.questionNAnswer.length;
+      this.percentage = this.score/this.TotalQuestions * 100;
+      if(this.percentage >= 0 && this.percentage <= 33){
+        this.icon = "disappointed";
+      } else if(this.percentage >= 34 && this.percentage <= 66){
+        this.icon = "Good";
+      } else {
+        this.icon = "../../assets/images/trophy.png";
+      }
+    });    
   }
 }
