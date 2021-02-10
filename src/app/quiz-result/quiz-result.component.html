@@ -8,17 +8,14 @@
             <div class="container">
                 <div class="row g-4">
                     <div class="col-6" *ngFor="let option of article.options">
-                        <ng-template [ngIf]="option.optionId===article.selectOption && option.optionId===article.answer">
+                        <ng-template [ngIf]="(option.optionId===article.selectOption && option.optionId===article.answer) ||(option.optionId!==article.selectOption && option.optionId===article.answer)">
                             <div class="p-3 border correct">{{option.optionId}}: {{option.optionDesc}}<i class="fa fa-check" style="float: right;"></i></div>
                         </ng-template>
 
                         <ng-template [ngIf]="option.optionId===article.selectOption && option.optionId!==article.answer">
                             <div class="p-3 border wrong">{{option.optionId}}: {{option.optionDesc}}<i class="fa fa-remove" style="float: right;"></i></div>
                         </ng-template>
-                        <ng-template [ngIf]="option.optionId!==article.selectOption && option.optionId===article.answer">
-                            <div class="p-3 border correct">{{option.optionId}}: {{option.optionDesc}}<i class="fa fa-check" style="float: right;"></i></div>
-                        </ng-template>
-
+                        
                         <ng-template [ngIf]="option.optionId!==article.selectOption && option.optionId!==article.answer">
                             <div class="p-3 border bg-light">{{option.optionId}}: {{option.optionDesc}}</div>
                         </ng-template>
