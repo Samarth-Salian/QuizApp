@@ -22,17 +22,12 @@ export class QuizQuestionComponent implements OnInit {
   }
   getSelectedOption(event: any) {
     Object.defineProperty(this.question, 'selectOption', {
-      value: event.target.innerText,
+      value: event.target.value,
       writable: false,
       enumerable: true,
       configurable: true
     });
     this.dataWithAnswer.set(this.question.questionId,this.question);
-    let successDiv = document.querySelectorAll(".btn-success");
-    successDiv.forEach(function (value) {
-      value.classList.remove('btn-success');
-    });
-    event.target.setAttribute("class", "p-3 border btn-success");
     this.getQuestionWithUserAnswer();
   }
   getQuestionWithUserAnswer(){
