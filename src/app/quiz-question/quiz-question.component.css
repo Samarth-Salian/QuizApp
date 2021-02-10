@@ -25,3 +25,13 @@
 .button1 {
   background-color: #A1E1E6;
 }
+.mat-card-header .mat-card-title{
+  font-size:17px;
+}
+.mat-card {
+  margin-top: 30px;
+}
+input.form-check-input {
+  width: 17px;
+  height: 17px;
+}
