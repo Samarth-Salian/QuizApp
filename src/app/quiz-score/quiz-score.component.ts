@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizQuestionComponent } from "../quiz-question/quiz-question.component";
 import { AppService } from '../app.service';
 import { Question } from  '../quiz-model/quiz.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quiz-score',
@@ -15,13 +16,15 @@ export class QuizScoreComponent implements OnInit {
   icon:any;
   questionNAnswer: Question[] = [];
   dataInScore = history.state.data;
-  constructor(private appService:AppService) {
+  dataForDetailedScr:Question[] = []
+  constructor(private appService:AppService, private router: Router) {
     this.score = 0;
     this.TotalQuestions = 0;
     this.percentage=0;
    }
   ngOnInit(): void {
     let count =0;
+    let array: Question[] = [];
     this.appService.getQuestionAndAnswer().subscribe((data)=>{
       this.questionNAnswer = data.questions;
       this.questionNAnswer.forEach(function (item) {
@@ -32,8 +35,16 @@ export class QuizScoreComponent implements OnInit {
             if(item.answer === obj.optionId){
               count++;
             }
-          }
+            Object.defineProperty(item, 'selectOption', {
+              value: obj.optionId,
+              writable: false,
+              enumerable: true,
+              configurable: true
+            });
+          }          
+          array.push(item);
       });
+      this.dataForDetailedScr = array;
       this.score = count;
       this.TotalQuestions = this.questionNAnswer.length;
       this.percentage = this.score/this.TotalQuestions * 100;
@@ -45,5 +56,8 @@ export class QuizScoreComponent implements OnInit {
         this.icon = "../../assets/images/trophy.png";
       }
     });    
+  }
+  fnNavigateToResult(){
+    this.router.navigateByUrl('/result',{state: {data:this.dataForDetailedScr}});
   }
 }
