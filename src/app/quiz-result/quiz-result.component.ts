@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../app.service';
 import { Question } from  '../quiz-model/quiz.model';
 
 @Component({
@@ -9,13 +8,9 @@ import { Question } from  '../quiz-model/quiz.model';
 })
 export class QuizResultComponent implements OnInit {
   questionNAnswer: Question[] = [];
-  constructor(private appService:AppService) {    
-    this.appService.getQuestionAndAnswer().subscribe((data)=>{
-      this.questionNAnswer = data.questions;
-    });
-   }  
-    ngOnInit(): void {
-    
-  }
+  dataFromScore = history.state.data;
+  constructor() {  }  
+  ngOnInit(): void {
 
+  }
 }
