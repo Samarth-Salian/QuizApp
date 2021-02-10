@@ -10,7 +10,7 @@ import { QuizQuestionComponent } from "../quiz-question/quiz-question.component"
   styleUrls: ['./quiz-container.component.css']
 })
 export class QuizContainerComponent implements OnInit {
-  @ViewChild(QuizQuestionComponent) dataWithSelectedAnswer;
+  @ViewChild(QuizQuestionComponent) dataWithSelectedAnswer:any;
   quizQuestions: Question[] = [];
   currentQuestionIndex = 0;
   currentQuestion: Question = {};

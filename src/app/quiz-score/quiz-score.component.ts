@@ -16,7 +16,9 @@ export class QuizScoreComponent implements OnInit {
   questionNAnswer: Question[] = [];
   dataInScore = history.state.data;
   constructor(private appService:AppService) {
-    this.score = 0;    
+    this.score = 0;
+    this.TotalQuestions = 0;
+    this.percentage=0;
    }
   ngOnInit(): void {
     let count =0;
@@ -26,7 +28,7 @@ export class QuizScoreComponent implements OnInit {
         let answerId = item.answer;
         if(history.state.data.has(item.questionId)){
           let a = history.state.data.get(item.questionId);
-          let obj = a.options.find(item => item.optionDesc === a.selectOption);
+          let obj = a.options.find((item:any) => item.optionDesc === a.selectOption);
             if(item.answer === obj.optionId){
               count++;
             }
