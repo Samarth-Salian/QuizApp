@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuizLoginComponent } from './quiz-login/quiz-login.component';
@@ -16,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
+import {BlockCopyPasteDirective} from '../app/block-copy-paste.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { MatCardModule } from '@angular/material/card';
     QuizResultComponent,
     QuizHeaderComponent,
     QuizContainerComponent,
-    QuizQuestionComponent
+    QuizQuestionComponent,
+    BlockCopyPasteDirective
   ],
   imports: [
     BrowserModule,
