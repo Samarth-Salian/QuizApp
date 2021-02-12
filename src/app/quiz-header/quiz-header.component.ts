@@ -8,7 +8,7 @@ import { AppService } from '../app.service';
 })
 export class QuizHeaderComponent implements OnInit {
   appName = "";
-  constructor(private appService: AppService) { 
+  constructor(public appService: AppService) { 
     this.appName = this.appService.getAppName();
   }
   ngOnInit(): void {

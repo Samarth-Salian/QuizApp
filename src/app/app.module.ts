@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
 import {BlockCopyPasteDirective} from '../app/block-copy-paste.directive';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {BlockCopyPasteDirective} from '../app/block-copy-paste.directive';
     MatButtonModule,
     HttpClientModule,
     MatProgressBarModule,
-    MatCardModule
+    MatCardModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
