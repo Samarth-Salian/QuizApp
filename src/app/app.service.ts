@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Quiz } from './quiz-model/quiz.model';
+import { ToastrService } from 'ngx-toastr';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +10,7 @@ export class AppService {
   private questionsNAnswersURL = 'assets/mock/questionsNAnswers.json'
   private questionsNOptionsURL = 'assets/mock/questionsNOptions.json'
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,private toastr: ToastrService) { }
   public getQuestionAndAnswer(){
     return this.httpClient.get<Quiz>(this.questionsNAnswersURL);
   }
@@ -18,5 +20,7 @@ export class AppService {
   public getAppName(){
     return "Quiz App";
   }
-  
+  showSuccess(message:any){
+    this.toastr.success(message)
+  }
 }

@@ -48,12 +48,10 @@ export class QuizScoreComponent implements OnInit {
       this.score = count;
       this.TotalQuestions = this.questionNAnswer.length;
       this.percentage = this.score/this.TotalQuestions * 100;
-      if(this.percentage >= 0 && this.percentage <= 33){
-        this.icon = "disappointed";
-      } else if(this.percentage >= 34 && this.percentage <= 66){
-        this.icon = "Good";
+      if(this.percentage >= 0 && this.percentage <= 50){
+        this.icon = "../../assets/images/sad.png";
       } else {
-        this.icon = "../../assets/images/trophy.png";
+        this.icon = "../../assets/images/smiley.png";
       }
     });    
   }

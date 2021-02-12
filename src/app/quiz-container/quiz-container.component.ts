@@ -43,7 +43,7 @@ export class QuizContainerComponent implements OnInit {
     this.currentQuestionIndex++;
     this.timeLeft = 10;
     if(this.questionNumber === this.quizQuestions.length){
-      event.target.innerText = "Save";
+      event.target.innerText = "Submit";
     }
   }
   startTimer() {
