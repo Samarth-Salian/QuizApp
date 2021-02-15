@@ -1,9 +1,7 @@
 div {
     background-color: #FAF2F2;
-    width: 300px;
-    border: 15px solid #141414;
-    padding: 50px;
-    margin: 20px;
+    
+    
   }
   .button {
     border: none;
@@ -18,3 +16,11 @@ div {
   }
   
   .button1 {background-color: #A1E1E6;} 
+.options{
+  display: inline-block;
+}
+.questionContainer{
+  padding: 5%;
+  margin-bottom: 10px;
+}
+

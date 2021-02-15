@@ -1,3 +1,5 @@
 <app-quiz-header></app-quiz-header>
 <app-quiz-display [quizData]="currentQuestion"></app-quiz-display>
-<button (click)="nextQuestion()">Next Question</button>
+<div class="container nextContainer">
+    <button (click)="nextQuestion()" mat-raised-button color="primary">Next Question</button>
+</div>

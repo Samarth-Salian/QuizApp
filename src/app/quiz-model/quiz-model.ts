@@ -11,4 +11,4 @@ export interface Question {
 
 export interface Quiz {
     questions: Question[];
-}
+} 

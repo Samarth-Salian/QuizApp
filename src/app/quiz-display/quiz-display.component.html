@@ -1,8 +1,12 @@
-<div *ngIf="question">
-    <p>
-        {{question.questionDesc}}
-    </p><br>
-    <p *ngFor="let op  of question.options">
-        <button>{{op.optionDesc}}</button>
-    </p>
+<div *ngIf="question" class="container questionContainer">
+    <div class="row">
+        <p>
+            {{question.questionDesc}}
+        </p>
+    </div>
+    <div class="row">
+        <p [ngClass]="'options col-md-12'" *ngFor="let op  of question.options">
+            <button [ngClass]="'buttonOption'" mat-raised-button>{{op.optionDesc}}</button>
+        </p>
+    </div>
 </div>
